@@ -1,0 +1,33 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+menu{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    border: solid red 5px;
+    border-radius: 10px;
+}
+menu h2{
+    color: white;
+}
+menu h2:hover{
+    color:rgb(173, 11, 11);
+    font-size: 20px;
+    
+}
+section{
+    display: flex;
+    justify-content: center;
+    color: rgb(110, 0, 212);
+    background-image: url(../Img/algoritmos.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: cursive;
+    font-size: xx-large;
+    font-style: oblique;
+
+}
