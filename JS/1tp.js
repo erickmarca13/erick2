@@ -1,3 +1,4 @@
+//Ejecicio 1 
 function Prueba(params) {
     var meses = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
     for (let i = 0; i < meses.length; i++) {
@@ -5,8 +6,11 @@ function Prueba(params) {
         
     }
 }
+
+
+// Ejecicio 2 
 function Ejercicio2() {
-    var valores = [true, 5, false, "hola", "adios",2,"gjdjdflk"];
+    var valores = [true, 5, false, "hola", "adios",2,];
     var valor = "";
 
     for (let i = 0; i < valores.length; i++) {
@@ -18,4 +22,19 @@ function Ejercicio2() {
 }
 
     console.log("el mayor es "+valor);
+}
+
+//Ejercicio 3 
+
+//Ejercicio 4 
+
+//Ejercicio 5 
+function Ejercicio5() { 
+    var numero = 5; // Numero del que queremos calcular el factorial
+    let r = 1;
+    for(let i = numero; i>0; i--){
+    r *= i;
+}    
+
+    console.log(r);
 }
