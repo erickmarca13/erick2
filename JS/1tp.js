@@ -25,6 +25,24 @@ function Ejercicio2() {
 }
 
 //Ejercicio 3 
+function Ejercicio3() {
+
+    var numero1 = 5;
+    var numero2 = 8;
+if(numero1 < numero2) {
+console.log("numero1 no es mayor que numero2");
+}
+if(numero2 > 0) {
+console.log("numero2 es positivo");
+}
+if(numero1 < 0 || numero1 != 0) {
+console.log("numero1 es negativo o distinto de cero");
+}
+numero1 = numero1 + 1;
+if(numero2 > numero1) {
+console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+}
+}
 
 //Ejercicio 4 
 
@@ -38,6 +56,15 @@ function Ejercicio5() {
 
     console.log(r);
 }
+//Ejercicio 6
+function ejercicio6(){
+    var numero = document.querySelector("#numero").value;
+        if (numero % 2 == 0){
+            console.log ("El número es par.");
+        } else{
+            console.log ("El número es impar.");
+       }
+    }
 //Ejercicio 7
 function Ejercicio7() {
     const texto = 'HOLA';
@@ -53,7 +80,7 @@ if (texto === texto.toUpperCase()) {
 
 // ejercicio 8 
 function esPalindromo(palabra) {
-    
+
    palabra = palabra.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
    
    var invertida = palabra.split('').reverse().join('');
@@ -66,3 +93,42 @@ console.log(esPalindromo("anita lava la tina"));
 console.log(esPalindromo("La ruta nos aportó otro paso natural"));
 console.log(esPalindromo("¡Hola mundo!"));
 console.log(esPalindromo("La ruta nos aporto otro paso natural"));
+//9
+function Persona(nombre, edad, genero){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.genero = genero;   
+}
+
+Persona.prototype.obtDetalles = function() {
+    console.log("nombre: " + this.nombre);
+    console.log("edad: " + this.edad);
+    console.log("genero: " + this.genero);
+}
+
+function Estudiante(nombre, edad, genero, curso, grupo){
+    Persona.call(this, nombre, edad, genero);
+    this.curso = curso;
+    this.grupo = grupo;
+}
+
+Estudiante.prototype = Object.create(Persona.prototype);
+Estudiante.prototype.constructor = Estudiante;
+
+Estudiante.prototype.registrar = function(){
+    console.log("el alumno " + this.nombre + " está registrado en el curso " + this.curso + " del grupo " + this.grupo);
+}
+
+function Profesor(nombre, edad, genero, asignatura, nivel){
+    Persona.call(this, nombre, edad, genero);
+    this.asignatura = asignatura;
+    this.nivel = nivel;
+}
+
+Profesor.prototype = Object.create(Profesor.prototype);
+Profesor.prototype.constructor = Profesor;
+
+Profesor.prototype.asignar = function(){
+    console.log("el profesor " + this.nombre + " tiene la asignatura " + this.asignatura + " del nivel " + this.nivel);
+}
+//10 
