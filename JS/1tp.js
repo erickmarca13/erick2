@@ -40,12 +40,29 @@ function Ejercicio5() {
 }
 //Ejercicio 7
 function Ejercicio7() {
-    var letras="abcdefghyjklmnñopqrstuvwxyz";
-    for(i=0; i<texto.length; i++){
-        if (letras.indexOf(texto.charAt(i),0)!=-1){
-           return 1;
-        }
-     }
-     return 0;
-  }
+    const texto = 'HOLA';
+
+if (texto === texto.toUpperCase()) {
+  console.log('El texto está en mayúsculas');
+} else if (texto === texto.toLowerCase()) {
+  console.log('El texto está en minúsculas');
+} else {
+  console.log('El texto tiene una combinación de mayúsculas y minúsculas');
+}
+}
+
+// ejercicio 8 
+function esPalindromo(palabra) {
+    
+   palabra = palabra.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+   
+   var invertida = palabra.split('').reverse().join('');
+   
   
+   return palabra === invertida;
+}
+
+console.log(esPalindromo("anita lava la tina"));
+console.log(esPalindromo("La ruta nos aportó otro paso natural"));
+console.log(esPalindromo("¡Hola mundo!"));
+console.log(esPalindromo("La ruta nos aporto otro paso natural"));
