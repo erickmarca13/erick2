@@ -30,7 +30,7 @@ function Ejercicio3() {
     var numero1 = 5;
     var numero2 = 8;
 if(numero1 < numero2) {
-console.log("numero1 no es mayor que numero2");
+console.log("numero1 no es mayor que numero 2");
 }
 if(numero2 > 0) {
 console.log("numero2 es positivo");
@@ -45,24 +45,34 @@ console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igua
 }
 
 //Ejercicio 4 
+function Ejercicio4(params) {
+    var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K',
+'E', 'T'];
+
+var dni = document.querySelector("#dni").value;
+var letraUsuario = document.querySelector("#letra").value;
+var letraUsuarioMayuscula = letraUsuario.toUpperCase();
+
+if (dni > 0 && dni < 99999999) {
+    var posicion = dni % 23;
+    if (letras[posicion] == letraUsuarioMayuscula) {
+        console.log("El número DNI y la letra son correctos");
+    }else {
+        console.log("La letra que ha indicado no es correcta");
+    }
+}else {
+    console.log("El número proporcionado no es válido");
+}
+
+}
 
 //Ejercicio 5 
-<<<<<<< HEAD
-function Ejercicio5() { 
-    var numero = 5; 
-    var r = 1;
-    for(let i = numero; i>0; i--){
-    r *= i;
-}    
-=======
 function Ejercicio5() {
-    var numero = 5; // Numero del que queremos calcular el factorial
+    var numero = 5; 
     let r = 1;
     for (let i = numero; i > 0; i--) {
         r *= i;
     }
->>>>>>> 264b803ad3fddaf5dc1e321001c0f57a5d8f67e6
-
     console.log(r);
 }
 //Ejercicio 6
@@ -102,7 +112,7 @@ console.log(esPalindromo("anita lava la tina"));
 console.log(esPalindromo("La ruta nos aportó otro paso natural"));
 console.log(esPalindromo("¡Hola mundo!"));
 console.log(esPalindromo("La ruta nos aporto otro paso natural"));
-//9
+// ejercicio 9
 function Persona(nombre, edad, genero){
     this.nombre = nombre;
     this.edad = edad;
@@ -140,4 +150,45 @@ Profesor.prototype.constructor = Profesor;
 Profesor.prototype.asignar = function(){
     console.log("el profesor " + this.nombre + " tiene la asignatura " + this.asignatura + " del nivel " + this.nivel);
 }
-//10 
+
+function EstudianteInstancia() {
+    let nombre = document.querySelector("#Nombre").value;
+    let edad = document.querySelector("#Edad").value;
+    let genero = document.querySelector("#Genero").value;
+    let curso = document.querySelector("#Curso").value;
+    let grupo = document.querySelector("#Grupo").value;
+
+    let estudiante = new Estudiante(nombre,edad,genero,curso,grupo);
+
+    console.log(estudiante.obtDetalles());
+    console.log(estudiante.registrar());
+}
+
+function ProfesorInstancias() {
+    let nombre = document.querySelector("#NombreP").value;
+    let edad = document.querySelector("#EdadP").value;
+    let genero = document.querySelector("#GeneroP").value;
+    let asignatura = document.querySelector("#Asignatura").value;
+    let Nivel = document.querySelector("#Nivel").value;
+
+    let profesor = new Profesor(nombre,edad,genero,asignatura,Nivel);
+
+    console.log(profesor.obtDetalles());
+    console.log(profesor.asignar());
+}
+//Ejercicio 10 
+let sumas = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+for (let i = 0; i < 36000; i++) {
+
+  let dado1 = Math.floor(Math.random() * 6) + 1;
+  let dado2 = Math.floor(Math.random() * 6) + 1;
+
+  let suma = dado1 + dado2;
+ 
+ sumas[suma-2]++;
+}
+
+for (let i = 0; i < 11; i++) {
+  console.log("La suma", i+2, "apareció", sumas[i], "veces");
+} 
