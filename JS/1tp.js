@@ -30,8 +30,8 @@ function Ejercicio2() {
 
 //Ejercicio 5 
 function Ejercicio5() { 
-    var numero = 5; // Numero del que queremos calcular el factorial
-    let r = 1;
+    var numero = 5; 
+    var r = 1;
     for(let i = numero; i>0; i--){
     r *= i;
 }    
